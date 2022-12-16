@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2020 The Android Open Source Project
 # Copyright (C) 2020 The TWRP Open Source Project
+# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,9 +17,6 @@
 #
 
 DEVICE_PATH := device/oppo/R9s
-
-# For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -37,6 +35,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := R9s
+TW_OZIP_DECRYPT_KEY := "D6DCCF0AD5ACD4E0292E522DB7C1381E"
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -64,6 +63,14 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oppo/R9s
 TARGET_KERNEL_CONFIG := R9s_defconfig
 
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 58765843456
+BOARD_FLASH_BLOCK_SIZE := 131072
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
 
@@ -78,3 +85,22 @@ TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_TWRPAPP := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+RECOVERY_SDCARD_ON_DATA := true
+
+# Crypto
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_PROVIDES_KEYMASTER := true
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
+
