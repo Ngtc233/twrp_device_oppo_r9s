@@ -1,4 +1,5 @@
 TeamWin Recovery Project
+目前编译9.0分支卡一，只能用于编译7.1分支
 
 Device configuration for Oppo R9s/sk
 =====================================================
