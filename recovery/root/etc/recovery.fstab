@@ -13,5 +13,3 @@
 
 /usb-otg           vfat      /dev/block/sda1            /dev/block/sda   flags=display="USB-OTG";storage;wipeingui;removable
 
-/vendor			ext4		/dev/block/bootdevice/by-name/oem			flags=wipeingui
-/vendor_image	emmc		/dev/block/bootdevice/by-name/oem
